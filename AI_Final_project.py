@@ -30,8 +30,8 @@ plt.figure()
 plt.pie(loan_change_risk_flag.values,
         labels=loan_change_risk_flag.index,
         startangle=90,
-        autopct="%1.2f%%",
-        labeldistance=None
+        autopct="%1.2f%%", #autopct 設定餅圖每個區域的百分比值
+        labeldistance=None #label和餅圖中心的距離 Default 為 1.1
         )
 plt.legend()
 plt.title("透過用戶行為決定是否借貸")
