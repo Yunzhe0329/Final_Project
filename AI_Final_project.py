@@ -107,7 +107,7 @@ plt.title("Confusion Metrix")
 plt.tight_layout()
 plt.show()
 
-print("Accuracy of Random Forest Model", model_accuracy*100)  #準確率89%
+print("Accuracy of Random Forest Model", model_accuracy*100)  #準確率89.91%(when test_size=0.3, random_state=42)
 print("\n模型評估:\n")
 print(metrics.classification_report(y_test, prediction))  #做總結
 
