@@ -74,7 +74,7 @@ X = loan_dataframe.drop(["Risk_Flag"],axis=1)
 
 y= loan_dataframe["Risk_Flag"]
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)  #將資料分成訓練集和測試集，訓練集占 70%，測試集占 30%
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=99)  #將資料分成訓練集和測試集，訓練集占 70%，測試集占 30%
 
 model = RandomForestClassifier()  #創建了一個隨機森林分類器模型
 model.fit(X_train, y_train)  #使用訓練集進行模型訓練
@@ -111,3 +111,22 @@ print("Accuracy of Random Forest Model", model_accuracy*100)  #準確率89.91%(w
 print("\n模型評估:\n")
 print(metrics.classification_report(y_test, prediction))  #做總結
 
+
+
+'''
+test_size   random_state    accuracy
+0.35        47              90.0022%
+0.35        17              89.885%
+0.40        47              89.97222%
+0.40        46              89.8938%
+0.37        46              89.9581%
+0.32        47              89.9702%
+0.30        47              89.9060%
+0.3         99              90.03571%
+0.3         125             90.01984%
+0.35        125             89.9807%
+0.35        99              89.9659%
+0.30        99              90.06481%
+0.30        99              90.02777%
+0.3         42              89.8981%
+'''
